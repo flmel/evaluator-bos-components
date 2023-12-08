@@ -9,22 +9,22 @@ const menuLinks = [
   {
     label: "Home",
     icon: "house",
-    component: "gagdiez.near/widget/NCD.Main",
+    component: "evaluator.near/widget/NCD.Main",
   },
   {
     icon: "trophy",
     label: "Progress",
-    component: "gagdiez.near/widget/NCD.Progress",
+    component: "evaluator.near/widget/NCD.Progress",
   },
   {
     icon: "motherboard",
     label: "How to Setup",
-    component: "gagdiez.near/widget/NCD.Setup",
+    component: "evaluator.near/widget/NCD.Setup",
   },
   {
     icon: "book",
     label: "Lesson 1",
-    component: "gagdiez.near/widget/NCD.Lessons.HelloNear",
+    component: "evaluator.near/widget/NCD.Lessons.HelloNear",
   },
 ];
 
@@ -35,7 +35,7 @@ return (
   <div class="row mt-1">
     <div class="col-3">
       <Widget
-        src="gagdiez.near/widget/Menu"
+        src="evaluator.near/widget/Menu"
         props={{
           menuLinks,
           topics,
