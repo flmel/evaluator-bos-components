@@ -4,18 +4,11 @@ if (context.loading) {
 
 const evaluator_contract = "eval.flmel.near";
 
-let progress;
+let progress = Near.view(evaluator_contract, "get_progress", { account_id: context.accountId });
 
-useEffect(() => {
-  const getProgress = async () => {
-    return Near.view(evaluator_contract, "get_progress", { account_id: context.accountId });
-  }
-
-  progress = getProgress();
-
-  console.log(progress);
-}, []);
-
+if (progress === null) {
+  return "Loading...";
+}
 
 const menuLinks = [
   {
@@ -104,7 +97,7 @@ const lessons = [{
   }
 }];
 
-const tailwindCssUrl = "https://dl.dropboxusercontent.com/scl/fi/6urvxb5kp2qxdvxcilyot/output.css?rlkey=bguq38wb8ml4ost78s4iaou1a&dl=0";
+const tailwindCssUrl = "https://dl.dropboxusercontent.com/scl/fi/d2krq3g6bibgq3j5dmz1i/output.css?rlkey=qn0cqs11ow7qw28tsffp8ia3b&dl=0";
 
 State.init({
   theme: null,
